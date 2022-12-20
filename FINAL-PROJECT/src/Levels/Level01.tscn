@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Background1.png" type="Texture" id=1]
+[ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=6]
+
+[node name="Scene" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 3.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 80, 80 )
+collision_layer = 4
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -524192, 0, 0, -458656, 0, 0, -393120, 0, 0, -327584, 0, 0, -262048, 0, 0, -196568, 0, 0, -196567, 0, 0, -196566, 0, 0, -196559, 0, 0, -196558, 0, 0, -196557, 0, 0, -196536, 0, 0, -196535, 0, 0, -196534, 0, 0, -196529, 0, 0, -196528, 0, 0, -196527, 0, 0, -196512, 0, 0, -131006, 0, 0, -131005, 0, 0, -131004, 0, 0, -130976, 0, 0, -65506, 0, 0, -65505, 0, 0, -65504, 0, 0, -65479, 0, 0, -65478, 0, 0, -65477, 0, 0, -65476, 0, 0, -65454, 0, 0, -65453, 0, 0, -65452, 0, 0, -65449, 0, 0, -65448, 0, 0, -65447, 0, 0, -65446, 0, 0, -65445, 0, 0, -65440, 0, 0, 65535, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 96, 0, 0, 131071, 0, 0, 65632, 0, 0, 196607, 0, 0, 131167, 0, 0, 131168, 0, 0, 262143, 0, 0, 196702, 0, 0, 196703, 0, 0, 196704, 0, 0, 327679, 0, 0, 262225, 0, 0, 262226, 0, 0, 262227, 0, 0, 262235, 0, 0, 262236, 0, 0, 262237, 0, 0, 262238, 0, 0, 262239, 0, 0, 262240, 0, 0, 393215, 0, 0, 327752, 0, 0, 327753, 0, 0, 327754, 0, 0, 327756, 0, 0, 327757, 0, 0, 327758, 0, 0, 327759, 0, 0, 327765, 0, 0, 327766, 0, 0, 327767, 0, 0, 327768, 0, 0, 327769, 0, 0, 327770, 0, 0, 327771, 0, 0, 327772, 0, 0, 327773, 0, 0, 327774, 0, 0, 327775, 0, 0, 327776, 0, 0, 458751, 0, 0, 393228, 0, 0, 393283, 0, 0, 393284, 0, 0, 393285, 0, 0, 393286, 0, 0, 393305, 0, 0, 393306, 0, 0, 393307, 0, 0, 393308, 0, 0, 393309, 0, 0, 393310, 0, 0, 393311, 0, 0, 393312, 0, 0, 524287, 0, 0, 458763, 1, 0, 458764, 1, 0, 458796, 0, 0, 458797, 0, 0, 458798, 0, 0, 458799, 0, 0, 458801, 0, 0, 458802, 0, 0, 458803, 0, 0, 458815, 0, 0, 458816, 0, 0, 458817, 0, 0, 458841, 0, 0, 458842, 0, 0, 458843, 0, 0, 458844, 0, 0, 458845, 0, 0, 458846, 0, 0, 458847, 0, 0, 458848, 0, 0, 589823, 0, 0, 524297, 1, 0, 524298, 0, 0, 524299, 1, 0, 524300, 1, 0, 524346, 0, 0, 524347, 0, 0, 524348, 0, 0, 524349, 0, 0, 524377, 0, 0, 524378, 0, 0, 524379, 0, 0, 524380, 0, 0, 524381, 0, 0, 524382, 0, 0, 524383, 0, 0, 524384, 0, 0, 655359, 0, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 589864, 0, 0, 589865, 0, 0, 589866, 0, 0, 589867, 0, 0, 589877, 0, 0, 589878, 0, 0, 589879, 0, 0, 589880, 0, 0, 589913, 0, 0, 589914, 0, 0, 589915, 0, 0, 589916, 0, 0, 589917, 0, 0, 589918, 0, 0, 589919, 0, 0, 589920, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655391, 0, 0, 655392, 0, 0, 655393, 0, 0, 655394, 0, 0, 655438, 0, 0, 655439, 0, 0, 655440, 0, 0, 655441, 0, 0, 655442, 0, 0, 655443, 0, 0, 655444, 0, 0, 655445, 0, 0, 655446, 0, 0, 655447, 0, 0, 655448, 0, 0, 655449, 0, 0, 655450, 0, 0, 655451, 0, 0, 655452, 0, 0, 655453, 0, 0, 655454, 0, 0, 655455, 0, 0, 655456, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720974, 0, 0, 720975, 0, 0, 720976, 0, 0, 720977, 0, 0, 720978, 0, 0, 720979, 0, 0, 720980, 0, 0, 720981, 0, 0, 720982, 0, 0, 720983, 0, 0, 720984, 0, 0, 720985, 0, 0, 720986, 0, 0, 720987, 0, 0, 720988, 0, 0, 720989, 0, 0, 720990, 0, 0, 720991, 0, 0, 720992, 0, 0, 851967, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786488, 0, 0, 786489, 0, 0, 786490, 0, 0, 786491, 0, 0, 786492, 0, 0, 786493, 0, 0, 786494, 0, 0, 786495, 0, 0, 786496, 0, 0, 786497, 0, 0, 786498, 0, 0, 786499, 0, 0, 786500, 0, 0, 786501, 0, 0, 786502, 0, 0, 786503, 0, 0, 786504, 0, 0, 786505, 0, 0, 786506, 0, 0, 786507, 0, 0, 786508, 0, 0, 786509, 0, 0, 786510, 0, 0, 786511, 0, 0, 786512, 0, 0, 786513, 0, 0, 786514, 0, 0, 786515, 0, 0, 786516, 0, 0, 786517, 0, 0, 786518, 0, 0, 786519, 0, 0, 786520, 0, 0, 786521, 0, 0, 786522, 0, 0, 786523, 0, 0, 786524, 0, 0, 786525, 0, 0, 786526, 0, 0, 786527, 0, 0, 786528, 0, 0, 917503, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 851998, 0, 0, 851999, 0, 0, 852000, 0, 0, 852001, 0, 0, 852002, 0, 0, 852003, 0, 0, 852004, 0, 0, 852005, 0, 0, 852006, 0, 0, 852007, 0, 0, 852008, 0, 0, 852009, 0, 0, 852010, 0, 0, 852011, 0, 0, 852012, 0, 0, 852013, 0, 0, 852014, 0, 0, 852015, 0, 0, 852016, 0, 0, 852017, 0, 0, 852018, 0, 0, 852019, 0, 0, 852020, 0, 0, 852021, 0, 0, 852022, 0, 0, 852023, 0, 0, 852024, 0, 0, 852025, 0, 0, 852026, 0, 0, 852027, 0, 0, 852028, 0, 0, 852029, 0, 0, 852030, 0, 0, 852031, 0, 0, 852032, 0, 0, 852033, 0, 0, 852034, 0, 0, 852035, 0, 0, 852036, 0, 0, 852037, 0, 0, 852038, 0, 0, 852039, 0, 0, 852040, 0, 0, 852041, 0, 0, 852042, 0, 0, 852043, 0, 0, 852044, 0, 0, 852045, 0, 0, 852046, 0, 0, 852047, 0, 0, 852048, 0, 0, 852049, 0, 0, 852050, 0, 0, 852051, 0, 0, 852052, 0, 0, 852053, 0, 0, 852054, 0, 0, 852055, 0, 0, 852056, 0, 0, 852057, 0, 0, 852058, 0, 0, 852059, 0, 0, 852060, 0, 0, 852061, 0, 0, 852062, 0, 0, 852063, 0, 0, 852064, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 169, 864 )
+
+[node name="Camera2D" parent="Player" index="0"]
+limit_top = -600
+limit_right = 7760
+
+[node name="Sprite" parent="Player" index="1"]
+position = Vector2( 103, -169 )
+
+[node name="CollisionPolygon2D" parent="Player" index="2"]
+position = Vector2( 105, -173 )
+
+[node name="Gift" type="Node" parent="."]
+
+[node name="Gift1" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 1368, 850 )
+
+[node name="Gift2" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 1103, 724 )
+
+[node name="Gift3" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 2082, 846 )
+
+[node name="Gift4" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 2603, 770 )
+
+[node name="Gift5" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 4321, 689 )
+
+[node name="Gift6" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 1722, -38 )
+
+[node name="Gift7" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 3309, -302 )
+
+[node name="Gift8" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 7159, -106 )
+
+[node name="Gift9" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 4730, 613 )
+
+[node name="Gift10" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 921, -23 )
+
+[node name="Gift11" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 3675, 523 )
+
+[node name="Gift12" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 4030, 515 )
+
+[node name="Gift13" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 3005, 681 )
+
+[node name="Gift14" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 6248, 363 )
+
+[node name="Gift15" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 6679, -104 )
+
+[node name="Gift16" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 4041, -299 )
+
+[node name="Gift17" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 6908, 355 )
+
+[node name="Gift18" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 5200, 516 )
+
+[node name="Gift19" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 5524, 445 )
+
+[node name="Gift20" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 3332, 697 )
+
+[node name="Gift21" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 4722, -127 )
+
+[node name="Gift22" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 6594, 308 )
+
+[node name="Gift23" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 2533, -114 )
+
+[node name="Gift24" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 4879, 608 )
+
+[node name="Gift25" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 7635, 140 )
+
+[node name="Gift26" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 5882, -255 )
+
+[node name="Gift27" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 7182, 353 )
+
+[node name="Gift28" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 5865, 364 )
+
+[node name="Gift29" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 6418, -263 )
+
+[node name="Gift30" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 5402, -167 )
+
+[node name="Gift31" parent="Gift" instance=ExtResource( 6 )]
+position = Vector2( 4458, 687 )
+
+[editable path="Player"]
